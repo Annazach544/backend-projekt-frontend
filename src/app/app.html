@@ -56,3 +56,40 @@
   </div>
 
 </section>
+
+<section class="admin">
+
+  <h2>Lägg till maträtt</h2>
+
+  <div class="admin-form">
+
+    <input
+      type="text"
+      placeholder="Titel"
+      [(ngModel)]="newTitle"
+    >
+
+    <textarea
+      placeholder="Beskrivning"
+      [(ngModel)]="newDescription"
+    ></textarea>
+
+    <input
+      type="number"
+      placeholder="Pris"
+      [(ngModel)]="newPrice"
+    >
+
+    <input
+      type="text"
+      placeholder="Kategori"
+      [(ngModel)]="newCategory"
+    >
+
+    <button (click)="createMenuItem()">
+      Lägg till maträtt
+    </button>
+
+  </div>
+
+</section>

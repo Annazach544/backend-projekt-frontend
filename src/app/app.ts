@@ -15,6 +15,10 @@ export class App implements OnInit {
   password: string = "";
   loginMessage: string = "";
   token: string = "";
+  newTitle: string = "";
+  newDescription: string = "";
+  newPrice: number = 0;
+  newCategory: string = "";
 
   constructor(private http: HttpClient) {}
 
@@ -49,6 +53,46 @@ export class App implements OnInit {
 
     error: () => {
       this.loginMessage = "Fel användarnamn eller lösenord";
+    }
+
+  });
+}
+createMenuItem() {
+
+  const token = localStorage.getItem("token");
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  };
+
+  const newItem = {
+    title: this.newTitle,
+    description: this.newDescription,
+    price: this.newPrice,
+    category: this.newCategory,
+    image: ""
+  };
+
+  this.http.post(
+    'http://localhost:3000/api/menu',
+    newItem,
+    { headers }
+  ).subscribe({
+
+    next: () => {
+
+      this.getMenu();
+
+      this.newTitle = "";
+      this.newDescription = "";
+      this.newPrice = 0;
+      this.newCategory = "";
+
+      alert("Maträtt tillagd!");
+    },
+
+    error: () => {
+      alert("Kunde inte lägga till maträtt");
     }
 
   });
