@@ -1,12 +1,12 @@
 <header>
-  <h1>Bistro Vera</h1>
+  <h1>Bistro Anna</h1>
   <p>Modern restaurang med italienska smaker</p>
 </header>
 
 <section class="about">
   <h2>Om oss</h2>
   <p>
-    Bistro Vera är en modern restaurang som erbjuder italienskinspirerade
+    Bistro Anna är en modern restaurang som erbjuder italienskinspirerade
     rätter med färska råvaror och avslappnad atmosfär.
   </p>
 </section>
@@ -23,6 +23,10 @@
       <p>{{ item.description }}</p>
 
       <span>{{ item.price }} kr</span>
+
+      <button *ngIf="token" (click)="deleteMenuItem(item.id)">
+      Radera
+      </button>
 
     </div>
 
@@ -93,3 +97,8 @@
   </div>
 
 </section>
+
+<footer>
+  <p>Bistro Anna © 2026</p>
+  <p>Fiktiv restaurang skapad för projektuppgift i backend-baserad webbutveckling.</p>
+</footer>

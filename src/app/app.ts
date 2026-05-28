@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -20,7 +20,7 @@ export class App implements OnInit {
   newPrice: number = 0;
   newCategory: string = "";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cdRef: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.getMenu();
@@ -30,6 +30,7 @@ export class App implements OnInit {
     this.http.get<any[]>('http://localhost:3000/api/menu')
       .subscribe((data) => {
         this.menuItems = data;
+        this.cdRef.detectChanges();
       });
   }
 
@@ -91,8 +92,32 @@ createMenuItem() {
       alert("Maträtt tillagd!");
     },
 
+    error: (error) => {
+    console.log(error);
+    alert("Kunde inte radera maträtt");
+    }
+
+  });
+}
+deleteMenuItem(id: number) {
+
+  const token = localStorage.getItem("token");
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  };
+
+  this.http.delete(
+    `http://localhost:3000/api/menu/${id}`,
+    { headers }
+  ).subscribe({
+
+    next: () => {
+      this.getMenu();
+    },
+
     error: () => {
-      alert("Kunde inte lägga till maträtt");
+      alert("Kunde inte radera maträtt");
     }
 
   });
