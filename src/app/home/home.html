@@ -1,0 +1,29 @@
+<header>
+  <h1>Bistro Anna</h1>
+  <p>En modern bistro med italienska smaker</p>
+</header>
+
+<section class="about">
+  <h2>Om oss</h2>
+  <p>
+    Bistro Anna är en modern restaurang som erbjuder italienskt inspirerade
+    rätter med färska råvaror och avslappnad atmosfär.
+  </p>
+</section>
+
+<section class="menu">
+  <h2>Meny</h2>
+
+  <div class="menu-container">
+    <div class="menu-card" *ngFor="let item of menuItems">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <span>{{ item.price }} kr</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Bistro Anna © 2026</p>
+  <p><a routerLink="/admin">Admin</a></p>
+</footer>

@@ -1,0 +1,43 @@
+<section class="admin">
+  <h2>Admin Login</h2>
+
+  <div class="admin-form">
+    <input type="text" placeholder="Användarnamn" [(ngModel)]="username">
+    <input type="password" placeholder="Lösenord" [(ngModel)]="password">
+
+    <button (click)="login()">Logga in</button>
+
+    <p>{{ loginMessage }}</p>
+  </div>
+</section>
+
+<section class="admin" *ngIf="token">
+  <h2>Lägg till maträtt</h2>
+
+  <div class="admin-form">
+    <input type="text" placeholder="Titel" [(ngModel)]="newTitle">
+    <textarea placeholder="Beskrivning" [(ngModel)]="newDescription"></textarea>
+    <input type="number" placeholder="Pris" [(ngModel)]="newPrice">
+    <input type="text" placeholder="Kategori" [(ngModel)]="newCategory">
+
+    <button (click)="createMenuItem()">Lägg till maträtt</button>
+  </div>
+</section>
+
+<section class="menu" *ngIf="token">
+  <h2>Hantera meny</h2>
+
+  <div class="menu-container">
+    <div class="menu-card" *ngFor="let item of menuItems">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <span>{{ item.price }} kr</span>
+
+      <button (click)="deleteMenuItem(item.id)">Radera</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><a routerLink="/">Tillbaka till startsidan</a></p>
+</footer>
