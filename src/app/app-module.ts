@@ -9,9 +9,10 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './home/home';
 import { Admin } from './admin/admin';
+import { Menu } from './menu/menu';
 
 @NgModule({
-  declarations: [App, Home, Admin],
+  declarations: [App, Home, Admin, Menu],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
