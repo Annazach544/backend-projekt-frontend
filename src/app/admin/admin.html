@@ -20,9 +20,15 @@
     <input type="number" placeholder="Pris" [(ngModel)]="newPrice">
     <input type="text" placeholder="Kategori" [(ngModel)]="newCategory">
 
-    <button (click)="createMenuItem()">Lägg till maträtt</button>
-  </div>
-</section>
+    <button *ngIf="!editId" (click)="createMenuItem()">
+    Lägg till maträtt
+    </button>
+
+    <button *ngIf="editId" (click)="updateMenuItem()">
+    Spara ändringar
+    </button>
+    </div>
+    </section>
 
 <section class="menu" *ngIf="token">
   <h2>Hantera meny</h2>
@@ -32,8 +38,8 @@
       <h3>{{ item.title }}</h3>
       <p>{{ item.description }}</p>
       <span>{{ item.price }} kr</span>
-
-      <button (click)="deleteMenuItem(item.id)">Radera</button>
+    <button (click)="startEdit(item)"> Redigera </button>
+    <button (click)="deleteMenuItem(item.id)">Radera</button>
     </div>
   </div>
 </section>

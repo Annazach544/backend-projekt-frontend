@@ -11,6 +11,8 @@ export class Menu implements OnInit {
 
   menuItems: any[] = [];
 
+  categories: string[] = ["Förrätt", "Pizza", "Varmrätt", "Dessert"];
+
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
@@ -18,10 +20,14 @@ export class Menu implements OnInit {
   }
 
   getMenu() {
-  this.http.get<any[]>('http://localhost:3000/api/menu')
-    .subscribe((data) => {
-      this.menuItems = data;
-      this.cdr.detectChanges();
-    });
-}
+    this.http.get<any[]>('http://localhost:3000/api/menu')
+      .subscribe((data) => {
+        this.menuItems = data;
+        this.cdr.detectChanges();
+      });
+  }
+
+  getItemsByCategory(category: string) {
+    return this.menuItems.filter(item => item.category === category);
+  }
 }

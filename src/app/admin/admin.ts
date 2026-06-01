@@ -20,6 +20,7 @@ export class Admin implements OnInit {
   newDescription: string = "";
   newPrice: number = 0;
   newCategory: string = "";
+  editId: number | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -109,4 +110,48 @@ export class Admin implements OnInit {
       }
     });
   }
+  startEdit(item: any) {
+  this.editId = item.id;
+  this.newTitle = item.title;
+  this.newDescription = item.description;
+  this.newPrice = item.price;
+  this.newCategory = item.category;
+}
+updateMenuItem() {
+  const token = localStorage.getItem("token");
+
+  const headers = {
+    Authorization: `Bearer ${token}`
+  };
+
+  const updatedItem = {
+    title: this.newTitle,
+    description: this.newDescription,
+    price: this.newPrice,
+    category: this.newCategory,
+    image: ""
+  };
+
+  this.http.put(
+    `http://localhost:3000/api/menu/${this.editId}`,
+    updatedItem,
+    { headers }
+  ).subscribe({
+    next: () => {
+      this.getMenu();
+
+      this.editId = null;
+      this.newTitle = "";
+      this.newDescription = "";
+      this.newPrice = 0;
+      this.newCategory = "";
+
+      alert("Maträtt uppdaterad!");
+    },
+    error: () => {
+      alert("Kunde inte uppdatera maträtt");
+    }
+  });
+}
+
 }

@@ -3,25 +3,29 @@
   <p>Italienska rätter med färska råvaror och klassiska smaker</p>
 </header>
 
-<section class="menu-intro">
-  <h2>Smaker från Italien</h2>
-  <p>
-    Här hittar du ett urval av våra pastarätter, pizzor och andra favoriter.
-    Menyn uppdateras löpande av restaurangens personal.
-  </p>
-</section>
+<section class="restaurant-menu">
 
-<section class="menu">
-  <h2>Meny</h2>
+  <div class="menu-section" *ngFor="let category of categories">
 
-  <div class="menu-container">
-    <div class="menu-card" *ngFor="let item of menuItems">
-      <p class="category">{{ item.category }}</p>
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.description }}</p>
+    <h2>{{ category }}</h2>
+
+    <div class="menu-row" *ngFor="let item of getItemsByCategory(category)">
+
+      <div class="menu-text">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+
       <span>{{ item.price }} kr</span>
+
     </div>
-  </div>
+
+    <p class="info-text">
+    För beställning eller bokning, kontakta restaurangen via telefon.
+    </p>
+  
+</div>
+
 </section>
 
 <footer>
