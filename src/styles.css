@@ -3,3 +3,19 @@ body {
     background-color: #f7f1ea;
     font-family: Arial, Helvetica, sans-serif;
 }
+.navbar {
+    background-color: #7a2e2e;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}

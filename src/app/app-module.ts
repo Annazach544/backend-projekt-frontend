@@ -10,9 +10,10 @@ import { App } from './app';
 import { Home } from './home/home';
 import { Admin } from './admin/admin';
 import { Menu } from './menu/menu';
+import { Booking } from './booking/booking';
 
 @NgModule({
-  declarations: [App, Home, Admin, Menu],
+  declarations: [App, Home, Admin, Menu, Booking],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],

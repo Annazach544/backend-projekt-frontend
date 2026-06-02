@@ -1,3 +1,4 @@
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,12 +25,12 @@ header p {
 
 .about {
     background-color: white;
-    padding: 2rem;
-    max-width: 800px;
-    margin: 2rem auto 1rem;
+    padding: 3rem 2rem;
+    max-width: 1050px;
+    margin: 2rem auto 1.5rem;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-radius: 14px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.08);
 }
 
 .menu {
@@ -90,4 +91,58 @@ footer a {
     color: #d97757;
     font-weight: bold;
     margin-top: 1rem;
+}
+
+.info-row {
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    border-top: 1px solid #d8c8bd;
+    border-bottom: 1px solid #d8c8bd;
+}
+
+.info-row div {
+    flex: 1;
+    text-align: center;
+}
+
+.info-row h3 {
+    color: #7a2e2e;
+    margin-bottom: 0.5rem;
+}
+
+.info-row p {
+    margin: 0.3rem 0;
+}
+
+@media (max-width: 768px) {
+    .info-row {
+        flex-direction: column;
+    }
+}
+.menu-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.9rem 1.8rem;
+    background-color: #d97757;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.menu-button:hover {
+    background-color: #7a2e2e;
+}
+.about h2 {
+    color: #7a2e2e;
+    font-size: 2rem;
+}
+
+.about p {
+    line-height: 1.6;
 }

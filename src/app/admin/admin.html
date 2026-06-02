@@ -1,3 +1,10 @@
+<nav class="navbar">
+  <a routerLink="/">Hem</a>
+  <a routerLink="/menu">Meny</a>
+  <a routerLink="/booking">Boka bord</a>
+  <a routerLink="/admin">Admin</a>
+</nav>
+
 <section class="admin">
   <h2>Admin Login</h2>
 
@@ -10,6 +17,10 @@
     <p>{{ loginMessage }}</p>
   </div>
 </section>
+
+<div class="logout-container" *ngIf="token">
+  <button (click)="logout()">Logga ut</button>
+</div>
 
 <section class="admin" *ngIf="token">
   <h2>Lägg till maträtt</h2>

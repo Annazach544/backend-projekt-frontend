@@ -153,5 +153,9 @@ updateMenuItem() {
     }
   });
 }
-
+logout() {
+  localStorage.removeItem("token");
+  this.token = "";
+  this.loginMessage = "";
+}
 }

@@ -68,3 +68,20 @@ footer {
 footer a {
     text-decoration: none;
 }
+.logout-container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.logout-container button {
+    background-color: #7a2e2e;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-container button:hover {
+    opacity: 0.9;
+}

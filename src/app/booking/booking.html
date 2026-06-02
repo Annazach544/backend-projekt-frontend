@@ -1,0 +1,32 @@
+<nav class="navbar">
+  <a routerLink="/">Hem</a>
+  <a routerLink="/menu">Meny</a>
+  <a routerLink="/booking">Boka bord</a>
+  <a routerLink="/admin">Admin</a>
+</nav>
+
+<header>
+  <h1>Boka bord</h1>
+  <p>Planera ditt besök hos Bistro Anna</p>
+</header>
+
+<section class="booking">
+  <h2>Skicka en bokningsförfrågan</h2>
+
+  <form>
+    <input type="text" placeholder="Namn">
+    <input type="tel" placeholder="Telefonnummer">
+    <input type="date">
+    <input type="time">
+    <input type="number" placeholder="Antal personer">
+
+    <textarea placeholder="Meddelande"></textarea>
+
+    <button type="button" (click)="sendBooking()">
+  Skicka förfrågan
+    </button>
+
+    <p>{{ message }}</p>
+
+  </form>
+</section>
