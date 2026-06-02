@@ -30,7 +30,7 @@ export class Admin implements OnInit {
   }
   // Hämtar alla maträtter från webbtjänsten
   getMenu() {
-    this.http.get<any[]>('http://localhost:3000/api/menu')
+    this.http.get<any[]>('https://backend-projekt-backend.onrender.com/api/menu')
       .subscribe((data) => {
         this.menuItems = data;
       });
@@ -44,7 +44,7 @@ export class Admin implements OnInit {
     };
 
     this.http.post<any>(
-      'http://localhost:3000/api/auth/login',
+    'https://backend-projekt-backend.onrender.com/api/auth/login',
       loginData
     ).subscribe({
       next: (response) => {
@@ -75,7 +75,7 @@ export class Admin implements OnInit {
     };
 
     this.http.post(
-      'http://localhost:3000/api/menu',
+      'https://backend-projekt-backend.onrender.com/api/menu',
       newItem,
       { headers }
     ).subscribe({
@@ -102,7 +102,7 @@ export class Admin implements OnInit {
     };
 
     this.http.delete(
-      `http://localhost:3000/api/menu/${id}`,
+      `https://backend-projekt-backend.onrender.com/api/menu/${id}`,
       { headers }
     ).subscribe({
       next: () => {
@@ -140,7 +140,7 @@ updateMenuItem() {
   };
 
   this.http.put(
-    `http://localhost:3000/api/menu/${this.editId}`,
+    `https://backend-projekt-backend.onrender.com/api/menu/${this.editId}`,
     updatedItem,
     { headers }
   ).subscribe({

@@ -22,7 +22,7 @@ export class Menu implements OnInit {
 
   // Hämtar alla maträtter från webbtjänsten
   getMenu() {
-    this.http.get<any[]>('http://localhost:3000/api/menu')
+    this.http.get<any[]>('https://backend-projekt-backend.onrender.com/api/menu')
       .subscribe((data) => {
         this.menuItems = data;
         this.cdr.detectChanges();
