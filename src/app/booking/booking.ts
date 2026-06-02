@@ -10,6 +10,8 @@ export class Booking {
 
   message: string = "";
 
+
+  // Hanterar bokningsförfrågan
   sendBooking() {
     this.message = "Tack för din bokningsförfrågan! Vi kontaktar dig så snart som möjligt.";
   }

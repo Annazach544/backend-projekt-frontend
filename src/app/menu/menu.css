@@ -77,17 +77,6 @@ header p {
     color: #7a2e2e;
 }
 
-footer {
-    background-color: #7a2e2e;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
 
 @media (max-width: 600px) {
     .restaurant-menu {

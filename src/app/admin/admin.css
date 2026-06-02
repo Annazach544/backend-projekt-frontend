@@ -60,14 +60,6 @@ textarea {
     margin-right: 0.5rem;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-}
-
-footer a {
-    text-decoration: none;
-}
 .logout-container {
     text-align: center;
     margin: 1rem 0;

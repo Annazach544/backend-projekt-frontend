@@ -78,8 +78,26 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .footer-info {
+    .navbar {
+        padding: 0.8rem 1rem;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.8rem;
+    }
+
+    .nav-logo {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        font-size: 1rem;
     }
 }

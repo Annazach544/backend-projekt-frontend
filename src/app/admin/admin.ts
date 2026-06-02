@@ -28,7 +28,7 @@ export class Admin implements OnInit {
     this.token = localStorage.getItem("token") || "";
     this.getMenu();
   }
-
+  // Hämtar alla maträtter från webbtjänsten
   getMenu() {
     this.http.get<any[]>('http://localhost:3000/api/menu')
       .subscribe((data) => {
@@ -36,6 +36,7 @@ export class Admin implements OnInit {
       });
   }
 
+  // Hanterar inloggning av administratör
   login() {
     const loginData = {
       username: this.username,
@@ -57,6 +58,7 @@ export class Admin implements OnInit {
     });
   }
 
+  // Skapar en ny maträtt
   createMenuItem() {
     const token = localStorage.getItem("token");
 
@@ -91,6 +93,7 @@ export class Admin implements OnInit {
     });
   }
 
+  // Raderar en maträtt
   deleteMenuItem(id: number) {
     const token = localStorage.getItem("token");
 
@@ -110,6 +113,8 @@ export class Admin implements OnInit {
       }
     });
   }
+
+  // Förbereder formuläret
   startEdit(item: any) {
   this.editId = item.id;
   this.newTitle = item.title;
@@ -117,6 +122,8 @@ export class Admin implements OnInit {
   this.newPrice = item.price;
   this.newCategory = item.category;
 }
+
+// Uppdaterar en maträtt
 updateMenuItem() {
   const token = localStorage.getItem("token");
 
@@ -153,6 +160,8 @@ updateMenuItem() {
     }
   });
 }
+
+// Loggar ut administratören
 logout() {
   localStorage.removeItem("token");
   this.token = "";

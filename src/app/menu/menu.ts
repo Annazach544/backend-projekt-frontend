@@ -11,6 +11,7 @@ export class Menu implements OnInit {
 
   menuItems: any[] = [];
 
+  // Kategorier som används för att dela upp restaurangens meny
   categories: string[] = ["Förrätt", "Pizza", "Varmrätt", "Dessert"];
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
@@ -19,6 +20,7 @@ export class Menu implements OnInit {
     this.getMenu();
   }
 
+  // Hämtar alla maträtter från webbtjänsten
   getMenu() {
     this.http.get<any[]>('http://localhost:3000/api/menu')
       .subscribe((data) => {
@@ -27,6 +29,7 @@ export class Menu implements OnInit {
       });
   }
 
+  // Hämtar maträtter baserat på kategori
   getItemsByCategory(category: string) {
     return this.menuItems.filter(item => item.category === category);
   }
