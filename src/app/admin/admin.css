@@ -85,3 +85,13 @@ footer a {
 .logout-container button:hover {
     opacity: 0.9;
 }
+
+:host {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-content {
+    flex: 1;
+}

@@ -4,118 +4,82 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    background: linear-gradient(
-        rgba(122, 46, 46, 0.92),
-        rgba(122, 46, 46, 0.92)
-    );
+.hero {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+    ),
+    url('/restaurant.jpg');
+
+    background-size: cover;
+    background-position: center;
     color: white;
     text-align: center;
-    padding: 3.5rem 1rem;
+
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
 }
 
-header h1 {
+.hero-content h1 {
     margin: 0;
-    font-size: 3.5rem;
+    margin-top: 150px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 6rem;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.45);
 }
 
-header p {
-    font-size: 1.2rem;
+.hero-content p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.6rem;
+    font-style: italic;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 1rem 2.6rem;
+    background-color: #d97757;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.hero-button:hover {
+    background-color: #b85f45;
 }
 
 .about {
     background-color: white;
     padding: 3rem 2rem;
-    max-width: 1050px;
-    margin: 2rem auto 1.5rem;
+    max-width: 950px;
+    margin: 3rem auto;
     text-align: center;
     border-radius: 14px;
     box-shadow: 0 3px 14px rgba(0,0,0,0.08);
+    font-family: Georgia, 'Times New Roman', serif;
 }
 
-.menu {
-    padding: 1rem 2rem 4rem;
-}
-
-.menu h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.menu-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.menu-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    border-top: 4px solid #853b23;
-
-    transition: transform 0.2s ease,
-                box-shadow 0.2s ease;
-}
-
-.menu-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow: 0 5px 14px rgba(0,0,0,0.15);
-}
-
-.menu-card h3 {
+.about h2 {
     color: #7a2e2e;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 2.8rem;
+    font-weight: normal;
+    letter-spacing: 1px;
 }
 
-.menu-card span {
-    font-weight: bold;
-    color: #7a2e2e;
-}
-
-footer {
-    background-color: #7a2e2e;
-    color: white;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 3rem;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-}
-
-.tagline {
-    color: #d97757;
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-.info-row {
-    max-width: 1000px;
-    margin: 0 auto 3rem;
-    padding: 1.5rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    border-top: 1px solid #d8c8bd;
-    border-bottom: 1px solid #d8c8bd;
-}
-
-.info-row div {
-    flex: 1;
-    text-align: center;
-}
-
-.info-row h3 {
-    color: #7a2e2e;
-    margin-bottom: 0.5rem;
-}
-
-.info-row p {
-    margin: 0.3rem 0;
+.about p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #444;
 }
 
 @media (max-width: 768px) {
@@ -123,26 +87,10 @@ footer a {
         flex-direction: column;
     }
 }
-.menu-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.9rem 1.8rem;
-    background-color: #d97757;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-}
 
-.menu-button:hover {
-    background-color: #7a2e2e;
-}
-.about h2 {
-    color: #7a2e2e;
-    font-size: 2rem;
-}
-
-.about p {
-    line-height: 1.6;
+:host .navbar {
+    position: absolute;
+    top: 0;
+    background-color: rgba(82, 28, 28, 0.75);
+    backdrop-filter: blur(4px);
 }

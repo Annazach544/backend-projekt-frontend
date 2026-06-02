@@ -1,13 +1,19 @@
 <nav class="navbar">
-  <a routerLink="/">Hem</a>
-  <a routerLink="/menu">Meny</a>
-  <a routerLink="/booking">Boka bord</a>
-  <a routerLink="/admin">Admin</a>
+  <div class="nav-logo">Bistro Anna</div>
+
+  <div class="nav-links">
+    <a routerLink="/">Hem</a>
+    <a routerLink="/menu">Meny</a>
+    <a routerLink="/booking">Boka bord</a>
+  </div>
 </nav>
 
-<header>
-  <h1>Bistro Anna</h1>
-  <p>En modern bistro med italienska smaker</p>
+<header class="hero">
+  <div class="hero-content">
+    <h1>Bistro Anna</h1>
+    <p>En modern bistro med italienska smaker</p>
+    <a routerLink="/menu" class="hero-button">Upptäck vår meny →</a>
+  </div>
 </header>
 
 <section class="about">
@@ -27,31 +33,33 @@
     och minnesvärd matupplevelse.
   </p>
 
-  <a routerLink="/menu" class="menu-button">Upptäck vår meny</a>
-
-</section>
-
-<section class="info-row">
-  <div>
-    <h3>Öppettider</h3>
-    <p>Mån–Fre: 11.00–21.00</p>
-    <p>Lör–Sön: 12.00–22.00</p>
-  </div>
-
-  <div>
-    <h3>Hitta hit</h3>
-    <p>Storgatan 12</p>
-    <p>852 30 Sundsvall</p>
-  </div>
-
-  <div>
-    <h3>Boka bord</h3>
-    <p>Ring oss på 060-123 45</p>
-    <p>eller besök oss direkt.</p>
-  </div>
+ <p>
+  Oavsett om du besöker oss för en lunch, middag eller en kväll med vänner 
+  vill vi skapa en varm och välkomnande atmosfär där god mat står i centrum.
+ </p>
 </section>
 
 <footer>
-  <p>Bistro Anna © 2026</p>
-  <p><a routerLink="/admin">Admin</a></p>
+  <div class="footer-info">
+
+    <div>
+      <h3>Öppettider</h3>
+      <p>Mån–Fre: 11.00–21.00</p>
+      <p>Lör–Sön: 12.00–22.00</p>
+    </div>
+
+    <div>
+      <h3>Hitta hit</h3>
+      <p>Storgatan 12</p>
+      <p>852 30 Sundsvall</p>
+    </div>
+
+    <div>
+      <h3>Länkar</h3>
+      <p><a routerLink="/menu">Meny</a></p>
+      <p><a routerLink="/booking">Boka bord</a></p>
+      <p><a routerLink="/admin">Admin</a></p>
+    </div>
+
+  </div>
 </footer>
