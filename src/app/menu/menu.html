@@ -12,7 +12,15 @@
   <p>Italienska rätter med färska råvaror och klassiska smaker</p>
 </header>
 
-<section class="restaurant-menu">
+<div *ngIf="loading" class="loading-message">
+  Laddar meny...
+</div>
+
+<div *ngIf="errorMessage" class="loading-message">
+  {{ errorMessage }}
+</div>
+
+<section class="restaurant-menu" *ngIf="!loading && !errorMessage">
 
   <div class="menu-section" *ngFor="let category of categories">
 
@@ -28,8 +36,8 @@
       <span>{{ item.price }} kr</span>
 
     </div>
-  
-</div>
+
+  </div>
 
 </section>
 

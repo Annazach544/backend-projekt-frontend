@@ -10,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
 export class Menu implements OnInit {
 
   menuItems: any[] = [];
+  loading: boolean = true;
+  errorMessage: string = "";
 
   // Kategorier som används för att dela upp restaurangens meny
   categories: string[] = ["Förrätt", "Pizza", "Varmrätt", "Dessert"];
@@ -21,13 +23,24 @@ export class Menu implements OnInit {
   }
 
   // Hämtar alla maträtter från webbtjänsten
-  getMenu() {
-    this.http.get<any[]>('https://backend-projekt-backend.onrender.com/api/menu')
-      .subscribe((data) => {
+getMenu() {
+  this.loading = true;
+  this.errorMessage = "";
+
+  this.http.get<any[]>('https://backend-projekt-backend.onrender.com/api/menu')
+    .subscribe({
+      next: (data) => {
         this.menuItems = data;
+        this.loading = false;
         this.cdr.detectChanges();
-      });
-  }
+      },
+      error: () => {
+        this.loading = false;
+        this.errorMessage = "Kunde inte hämta meny.";
+        this.cdr.detectChanges();
+      }
+    });
+}
 
   // Hämtar maträtter baserat på kategori
   getItemsByCategory(category: string) {
