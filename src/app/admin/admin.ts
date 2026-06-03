@@ -20,7 +20,7 @@ export class Admin implements OnInit {
   newDescription: string = "";
   newPrice: number = 0;
   newCategory: string = "";
-  editId: number | null = null;
+  editId: string | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -116,7 +116,7 @@ export class Admin implements OnInit {
 
   // Förbereder formuläret
   startEdit(item: any) {
-  this.editId = item.id;
+  this.editId = item._id;
   this.newTitle = item.title;
   this.newDescription = item.description;
   this.newPrice = item.price;
